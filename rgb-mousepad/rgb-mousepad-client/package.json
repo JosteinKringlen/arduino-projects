@@ -1,0 +1,23 @@
+{
+  "name": "coffee-weight-node",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Jostein Kringlen & Lars Henrik Haug",
+  "license": "MIT",
+  "description": "Coffee Stats!",
+  "scripts": {
+    "start": "electron .",
+    "install": "electron-rebuild"
+  },
+  "devDependencies": {
+    "electron": "^2.0.2",
+    "electron-rebuild": "^1.7.3"
+  },
+  "dependencies": {
+    "delay": "^3.0.0",
+    "fetch": "^1.1.0",
+    "jquery": "^3.3.1",
+    "qs": "^6.5.2",
+    "serialport": "^6.2.0"
+  }
+}
