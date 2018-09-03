@@ -12,5 +12,5 @@
 - Router tool (or something else that can be used to carve into the cutting board)
 
 #### Tutorial
-For instructions, see this tutorial by NerdForge:
+For instructions, see this tutorial by Nerdforge:
 https://www.youtube.com/watch?v=NymCw0jhULU
