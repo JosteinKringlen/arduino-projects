@@ -9,7 +9,7 @@ uint8_t hue[NUM_LEDS];
 
 char ch = -1;
 
-int stuff = 255;
+int brightness = 255;
 
 void setup() {
   Serial.begin(9600);
@@ -24,23 +24,56 @@ void loop() {
   if (Serial.available()) {
     ch = Serial.read();
   }
-  switch (ch) {
-    case '0':
+
+  switch (int(ch)) {
+    case 0:
       lightsOff();
       break;
-    case '1':
+    case 1:
+      changeBrightness(int(0.1 * 255));
+      break;
+    case 2:
+      changeBrightness(int(0.2 * 255));
+      break;
+    case 3:
+      changeBrightness(int(0.3 * 255));
+      break;
+    case 4:
+      changeBrightness(int(0.4 * 255));
+      break;
+    case 5:
+      changeBrightness(int(0.5 * 255));
+      break;
+    case 6:
+      changeBrightness(int(0.6 * 255));
+      break;
+    case 7:
+      changeBrightness(int(0.7 * 255));
+      break;
+    case 8:
+      changeBrightness(int(0.8 * 255));
+      break;
+    case 9:
+      changeBrightness(int(0.9 * 255));
+      break;
+    default:
+      break;
+  }
+
+  switch (ch) {
+    case 'a':
       rainbow();
       break;
-    case '2':
+    case 'b':
       staticColors();
       break;
-    case '3':
+    case 'c':
       reverseRainbow();
       break;
-    case '4':
+    case 'd':
       pulse();
       break;
-    case 'y':
+    case 'e':
       pulseFU();
       break;
     case 's':
@@ -49,6 +82,10 @@ void loop() {
       break;
     case 'z':
       epilepticGlory();
+      break;
+    // f for full brightness
+    case 'f':
+      changeBrightness(255);
       break;
     default:
       rainbow();
@@ -146,6 +183,10 @@ void pulseFU() {
     FastLED.show();
     delay(10);
   }
+}
+
+void changeBrightness(int brightnessInput) {
+  brightness = brightnessInput;
 }
 
 

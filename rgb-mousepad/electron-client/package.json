@@ -1,0 +1,46 @@
+{
+  "name": "client",
+  "productName": "Lights and Stuff",
+  "version": "0.0.1",
+  "description": "Electron client for controlling RGB lights",
+  "license": "MIT",
+  "author": {
+    "name": "Jostein Kringlen",
+    "email": "josteinkringlen@gmail.com"
+  },
+  "scripts": {
+    "test": "xo",
+    "start": "electron .",
+    "build": "electron-packager . --out=release-builds --asar --overwrite --all",
+    "build-macos": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "install": "electron-rebuild"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css"
+  ],
+  "keywords": [
+    "electron-app",
+    "electron"
+  ],
+  "dependencies": {
+    "electron-debug": "^2.0.0",
+    "electron-rebuild": "^1.8.2",
+    "jquery": "^3.3.1",
+    "serialport": "^7.0.2"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron": "^2.0.8",
+    "electron-packager": "^12.1.1",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
